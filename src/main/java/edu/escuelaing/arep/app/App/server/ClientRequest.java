@@ -1,4 +1,4 @@
-package edu.escuelaing.arep.app.App;
+package edu.escuelaing.arep.app.App.server;
 
 import edu.escuelaing.arep.app.App.model.BrowserService;
 
