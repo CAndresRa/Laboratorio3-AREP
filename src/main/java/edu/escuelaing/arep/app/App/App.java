@@ -1,9 +1,15 @@
 package edu.escuelaing.arep.app.App;
 
+import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
+import com.mongodb.client.MongoDatabase;
+import edu.escuelaing.arep.app.App.microspark.IFuncional;
 
-import edu.escuelaing.arep.app.App.server.Server;
-
-
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -12,8 +18,10 @@ import java.util.concurrent.Executors;
  * @author AndresRamirez
  */
 public class App {
+    static ExecutorService executorService = Executors.newFixedThreadPool(13);
+    static int counterConnections = 0;
+    static ServerSocket serverSocket = null;
 
-    private static Server server;
 
     /**
      * Start Server http: port 35000
@@ -21,10 +29,36 @@ public class App {
      */
     public static void main( String[] args ) {
         int port = getPort();
-        server = new Server(port);
+        HashMap<Integer, String> users = new HashMap<>();
+        MongoClientURI uri = new MongoClientURI(
+                "mongodb+srv://andres:1234@cluster0.issa6.mongodb.net/lab03?retryWrites=true&w=majority");
 
+        MongoClient mongoClient = new MongoClient(uri);
+        MongoDatabase database = mongoClient.getDatabase("lab03");
+        String name = "Andres";
+        for(int x = 0; x < 100; x++){
+            String temp = name + x;
+            users.put(x, temp);
+        }
+
+        try{
+            if (serverSocket == null) {
+                serverSocket = new ServerSocket(port);
+            }
+            System.out.println("Servidor esperando solicitudes al puerto 35000");
+            while(true){
+                Socket clientSocket = serverSocket.accept();
+                System.out.println("Nuevo cliente conectado");
+                ClientRequest clientRequest = new ClientRequest(clientSocket, users);
+                executorService.execute(clientRequest);
+                counterConnections++;
+                System.out.println(counterConnections);
+            }
+        } catch (IOException e){
+            System.err.println("Could not listen on port: 35000");
+            System.exit(1);
+        }
     }
-
     static int getPort() {
         if (System.getenv("PORT") != null) {
             return Integer.parseInt(System.getenv("PORT"));

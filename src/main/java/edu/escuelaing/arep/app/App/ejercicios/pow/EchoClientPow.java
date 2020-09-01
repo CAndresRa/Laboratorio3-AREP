@@ -1,4 +1,4 @@
-package edu.escuelaing.arep.app.App.ejercicios.browserurl.pow;
+package edu.escuelaing.arep.app.App.ejercicios.pow;
 import java.io.*;
 import java.net.*;
 public class EchoClientPow {
