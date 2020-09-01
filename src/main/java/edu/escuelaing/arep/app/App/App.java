@@ -1,15 +1,10 @@
 package edu.escuelaing.arep.app.App;
 
-import com.mongodb.MongoClient;
-import com.mongodb.MongoClientURI;
-import com.mongodb.client.MongoDatabase;
-import edu.escuelaing.arep.app.App.microspark.IFuncional;
 
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -30,11 +25,14 @@ public class App {
     public static void main( String[] args ) {
         int port = getPort();
         HashMap<Integer, String> users = new HashMap<>();
+        /*
         MongoClientURI uri = new MongoClientURI(
                 "mongodb+srv://andres:1234@cluster0.issa6.mongodb.net/lab03?retryWrites=true&w=majority");
 
         MongoClient mongoClient = new MongoClient(uri);
         MongoDatabase database = mongoClient.getDatabase("lab03");
+
+         */
         String name = "Andres";
         for(int x = 0; x < 100; x++){
             String temp = name + x;
