@@ -40,6 +40,7 @@ public class BrowserService {
     }
 
     /**
+     * @param clientSocket client that make request
      * @throws IOException because of the libraries used in the implementation of files
      */
     public void getFileBrowser(Socket clientSocket) throws IOException {

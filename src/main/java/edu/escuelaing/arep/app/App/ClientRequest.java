@@ -18,6 +18,7 @@ public class ClientRequest implements Runnable {
     /**
      * Constructor class clientRequest,
      * @param clientSocket socket connection with new client
+     * @param  users list with users in database
      */
     public ClientRequest(Socket clientSocket, HashMap<Integer,String> users) {
         this.clientSocket = clientSocket;
