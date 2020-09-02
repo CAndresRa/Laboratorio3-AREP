@@ -5,7 +5,7 @@
 
 ## Link a Heroku
 
-[Heroku](https://labarep3.herokuapp.com/index.html)
+[https://labarep3.herokuapp.com/index.html](https://labarep3.herokuapp.com/index.html)
 
 ## Uso 
 
@@ -13,17 +13,17 @@ Para el desarrollo del proyecto se utilizo **Maven** como una herramienta para l
 
 Utilizar `mvn package` para la generacion del fichero .jar con los .class compilados.
 
-![](https://github.com/CAndresRa/ARSW-CuartoLaboratorio/blob/master/imgReadme/mvn%20package.png)
+![](https://github.com/CAndresRa/Laboratorio3-AREP/blob/master/Img/mvn%20Package.png)
 
 Una vez realizado el `mvn package` el codigo estara listo para ser utilizado bajo la siguiente estructura.
 
 Para ejecutar el programa se utilizara desde la terminal el siguiente comando en terminal dando inicio al servidor web:
 
-`java -cp target/classes edu.escuelaing.arsw.app.App.App`
+`java -cp target/classes edu.escuelaing.arep.app.App.App`
  
 por ejemplo:
 
-![Texto alternativo](https://github.com/CAndresRa/ARSW-CuartoLaboratorio/blob/master/imgReadme/uso.png)
+![Texto alternativo](https://github.com/CAndresRa/Laboratorio3-AREP/blob/master/Img/Iniciarlizarserver.png)
 
 Como se puede observar el servidor web inicia y se muestra un mensaje que indica que esta esuchando por el **puerto 35000**:
 
@@ -47,6 +47,18 @@ Algunos de los archivos de los que dispone el servidor son:
 * `http://127.0.0.1:3500/pngfile.png`
 * `http://127.0.0.1:3500/jpgfile.jpg`
 
+Mediante el uso en el despliegue por la pagina web puede acceder a los siguientes enlaces disponibles.
+
+* https://labarep3.herokuapp.com/index.html
+* https://labarep3.herokuapp.com/pngfile.png
+* https://labarep3.herokuapp.com/jpgfile.jpg
+
+**Note que en el caso del index.html se estan utilizando solicitudes a todas las extenciones nombradas anteriormente siendo este el mayor exponente de funcionalidad correcta**
+
+La solicitud **GET** que se responde mediante una funcion lambda simulando el comportamiento de sparkweb es la siguiente:
+
+* https://labarep3.herokuapp.com/app
+
 Por ejemplo:
 
 ![Texto alternativo](https://github.com/CAndresRa/ARSW-CuartoLaboratorio/blob/master/imgReadme/browser1.png)
@@ -60,21 +72,33 @@ Cuando el **PATH** ingresado por el usuario es incorrecto debido a que el archiv
 
 ## Arquitectura
 
+Se encuentar disponible en el siguiente articulo:
+
+[Clients and Services](https://github.com/CAndresRa/Laboratorio3-AREP/blob/master/ClientsAndServices-CarlosRamirez.pdf)
+
 
 ## Pruebas 
 
-Se han realizado un **total de 5 JUnit test** con el fin de garantizar que el servidor encuentre y retorne los diferentes archivos solicitados mediante la **URL** adicionalmente mediante **JMeter** se realizaron **Pruebas de carga** sobre el servidor que buscan verificar la respuesta concurrente del mismo, las pruebas se explicaran a continuacion.
+Se han realizado un **total de 5 JUnit test** con el fin de garantizar que el servidor encuentre y retorne los diferentes archivos solicitados mediante la **URL** las pruebas se explicaran a continuacion.
 
 * Lectura de archivos existentes.
 * Lectura de archivos no encontrados.
-* Pruebas de carga sobre el servidor.
+
 
 ### Pruebas implementadas
 
-![]()
+![](https://github.com/CAndresRa/Laboratorio3-AREP/blob/master/Img/testimplementadas.png)
 
 ### Utilizando el comando de `mvn test`
 
-![]()
+![](https://github.com/CAndresRa/Laboratorio3-AREP/blob/master/Img/Mvn%20test.png)
+
+## JavaDocs
+
+Puede obtener los Javadocs de este documento en el siguiente enlace [JavaDocs]() o generarlos directamente desde su editor de texto favorito mediante el comando `mvn javadoc:javadoc` como se muestra a continuacion
+
+![](https://github.com/CAndresRa/Laboratorio2-AREP/blob/master/Img%20Readme/doc.png)
+
+https://github.com/CAndresRa/Laboratorio2-AREP/tree/master/apidocs
 
 
