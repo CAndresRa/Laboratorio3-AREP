@@ -97,8 +97,8 @@ Se han realizado un **total de 5 JUnit test** con el fin de garantizar que el se
 
 Puede obtener los Javadocs de este documento en el siguiente enlace [JavaDocs]() o generarlos directamente desde su editor de texto favorito mediante el comando `mvn javadoc:javadoc` como se muestra a continuacion
 
-![](https://github.com/CAndresRa/Laboratorio2-AREP/blob/master/Img%20Readme/doc.png)
+![](https://github.com/CAndresRa/Laboratorio3-AREP/blob/master/Img/Screen%20Shot%202020-09-02%20at%203.53.53%20AM.png)
 
-https://github.com/CAndresRa/Laboratorio2-AREP/tree/master/apidocs
+https://github.com/CAndresRa/Laboratorio3-AREP/tree/master/apidocs
 
 
