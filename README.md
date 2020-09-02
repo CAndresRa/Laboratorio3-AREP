@@ -72,7 +72,7 @@ Cuando el **PATH** ingresado por el usuario es incorrecto debido a que el archiv
 
 ## Arquitectura
 
-Se encuentar disponible en el siguiente articulo:
+Se encuentra disponible en el siguiente articulo:
 
 [Clients and Services](https://github.com/CAndresRa/Laboratorio3-AREP/blob/master/ClientsAndServices-CarlosRamirez.pdf)
 
